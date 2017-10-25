@@ -3,15 +3,41 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''echo "build start ..."
-return'''
+        sh '''
+            echo "build start ..."
+            return
+        '''
       }
     }
     stage('Deploy') {
       steps {
-        sh '''echo "deploy start ..."
-'''
+        sh '''
+            echo "deploy start ..."
+            python arr.py
+        '''
       }
     }
   }
+
+  post {
+    always{
+        echo "always ..."
+    }
+    changed {
+        echo "changed ..."
+    }
+    failure {
+        echo "failure ..."
+    }
+    success {
+        echo "success ..."
+    }
+    unstable {
+        echo "ustable ..."
+    }
+    aborted {
+        echo "aborted..."
+    }
+  }
+
 }

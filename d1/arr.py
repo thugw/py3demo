@@ -3,10 +3,10 @@ from inspect import signature
 
 DUPEFILTER_KEY = 'dupefilter:%(timestamp)s'
 
-print(DUPEFILTER_KEY %{'timestamp': 'hh'})
+print(DUPEFILTER_KEY %{'timestamp': 'abc'})
 
 
-dd = {"a":1, "b":2}
+dd = {"a":1, "b":5}
 
 def tt(**kwargs):
     print(kwargs)
