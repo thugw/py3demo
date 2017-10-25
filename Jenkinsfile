@@ -13,7 +13,7 @@ pipeline {
       steps {
         sh '''
             echo "deploy start ..."
-            python arr.py
+            python3 d1/arr.py
         '''
       }
     }
